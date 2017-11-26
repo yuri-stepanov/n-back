@@ -1,10 +1,11 @@
-import React from 'react'
-import './app.css'
+import React from 'react';
+import Game from './game';
+import './app.css';
 
 const App = () => (
-  <div className="app">
-    <h2>Hello, World</h2>
-  </div>
-)
+    <div className="app">
+        <Game />
+    </div>
+);
 
-export default App
+export default App;

@@ -1,33 +1,34 @@
 {
-  "name": "minimalistic-react-boilerplate",
-  "version": "1.0.0",
-  "description": "A sensible minimum to write react",
-  "main": "index.js",
-  "scripts": {
-    "build": "cross-env NODE_ENV=prod webpack",
-    "start": "cross-env NODE_ENV=dev webpack-dev-server"
-  },
-  "author": "Yury Stsiapanau",
-  "license": "ISC",
-  "devDependencies": {
-    "babel-core": "^6.25.0",
-    "babel-loader": "^7.1.1",
-    "babel-polyfill": "^6.23.0",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-react": "^6.24.1",
-    "clean-webpack-plugin": "^0.1.16",
-    "cross-env": "^5.0.5",
-    "css-loader": "^0.28.4",
-    "extract-text-webpack-plugin": "^3.0.0",
-    "html-webpack-plugin": "^2.30.1",
-    "react-hot-loader": "^3.0.0-beta.7",
-    "style-loader": "^0.18.2",
-    "webpack": "^3.5.4",
-    "webpack-dev-server": "^2.7.1",
-    "webpack-merge": "^4.1.0"
-  },
-  "dependencies": {
-    "react": "^16.1.1",
-    "react-dom": "^16.1.1"
-  }
+    "name": "minimalistic-react-boilerplate",
+    "version": "1.0.0",
+    "description": "A sensible minimum to write react",
+    "main": "index.js",
+    "scripts": {
+        "build": "cross-env NODE_ENV=prod webpack",
+        "start": "cross-env NODE_ENV=dev webpack-dev-server"
+    },
+    "author": "Yury Stsiapanau",
+    "license": "ISC",
+    "devDependencies": {
+        "babel-core": "^6.25.0",
+        "babel-loader": "^7.1.1",
+        "babel-polyfill": "^6.23.0",
+        "babel-preset-env": "^1.6.0",
+        "babel-preset-react": "^6.24.1",
+        "clean-webpack-plugin": "^0.1.16",
+        "cross-env": "^5.0.5",
+        "css-loader": "^0.28.4",
+        "extract-text-webpack-plugin": "^3.0.0",
+        "html-webpack-plugin": "^2.30.1",
+        "react-hot-loader": "^3.0.0-beta.7",
+        "style-loader": "^0.18.2",
+        "webpack": "^3.5.4",
+        "webpack-dev-server": "^2.7.1",
+        "webpack-merge": "^4.1.0"
+    },
+    "dependencies": {
+        "classnames": "^2.2.5",
+        "react": "^16.1.1",
+        "react-dom": "^16.1.1"
+    }
 }

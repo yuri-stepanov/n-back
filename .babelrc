@@ -1,21 +1,16 @@
 {
-  "presets": [
-    [
-      "env",
-      {
-        "targets": {
-          "browsers": [
-            "last 2 versions",
-            "safari 7"
-          ]
-        },
-        "modules": false,
-        "forceAllTransforms": true
-      }
+    "presets": [
+        [
+            "env",
+            {
+                "targets": {
+                    "browsers": ["last 2 versions", "safari 7"]
+                },
+                "modules": false,
+                "forceAllTransforms": true
+            }
+        ],
+        "react"
     ],
-    "react"
-  ],
-  "plugins": [
-    "react-hot-loader/babel"
-  ]
+    "plugins": ["react-hot-loader/babel"]
 }
