@@ -32,7 +32,6 @@ module.exports = function createConfig({ distFolder, rootFolder, srcFolder }) {
                 // using plain css loader for styles
                 {
                     test: /\.css$/,
-                    include: resolve(rootFolder, srcFolder),
                     use: ['style-loader', 'css-loader'],
                 },
             ],

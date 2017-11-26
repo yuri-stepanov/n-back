@@ -1,5 +1,6 @@
 .cell {
-    border: 1px solid darkblue;
+    margin: 25%;
+    border-radius: 10%;
 }
 
 .cell--active {
@@ -8,16 +9,24 @@
     animation-iteration-count: 1;
 }
 
+.cell--active.cell--correct {
+    animation-name: none;
+    background: linear-gradient(45deg, #1d976c 30%, #93f9b9 90%);
+}
+
 @keyframes pulse {
     0% {
-        background-color: initial;
+        background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
+        opacity: 0;
     }
 
     75% {
-        background-color: red;
+        background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
+        opacity: 1;
     }
 
     100% {
-        background-color: initial;
+        background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
+        opacity: 0;
     }
 }

@@ -14,7 +14,6 @@ module.exports = function createConfig({ rootFolder, srcFolder }) {
                 // using plain css loader for styles
                 {
                     test: /\.css$/,
-                    include: resolve(rootFolder, srcFolder),
                     use: ExtractTextPlugin.extract({
                         fallback: 'style-loader',
                         use: 'css-loader',

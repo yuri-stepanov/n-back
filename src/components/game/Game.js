@@ -4,7 +4,7 @@ import PlayGrid from './playGrid';
 import {
     DEFAULT_ROUND_TIME,
     DEFAULT_NUMBER_OF_ROUNDS,
-    NUMBER_OF_CELLS,
+    DIMENSION_SIZE,
     DEFAULT_DIFFICULTY,
 } from './gameConstants';
 // TODO: Use swipe to present user with UI controls
@@ -55,7 +55,7 @@ export default class Game extends Component {
         const { currentActiveCell } = this.state;
         let nextActiveCell = -1;
         do {
-            nextActiveCell = Math.floor(Math.random() * NUMBER_OF_CELLS);
+            nextActiveCell = Math.floor(Math.random() * DIMENSION_SIZE);
         } while (currentActiveCell === nextActiveCell);
         return nextActiveCell;
     }
@@ -68,6 +68,7 @@ export default class Game extends Component {
         console.log('current index: ' + nextActiveCell);
 
         this.setState({
+            isCurrentCellGuessedCorrectly: false,
             currentRound: currentRound + 1,
             currentActiveCell: nextActiveCell,
             previousActiveCells: [...previousActiveCells, ...[currentActiveCell]],
@@ -80,13 +81,13 @@ export default class Game extends Component {
             previousActiveCells[previousActiveCells.length - DEFAULT_DIFFICULTY];
         if (previousNAnswer === currentActiveCell) {
             this.setState({
+                isCurrentCellGuessedCorrectly: true,
                 numberOfCorrectAnswers: this.state.numberOfCorrectAnswers + 1,
             });
         }
     }
 
     handlerKeyDown({ key }) {
-        console.log(key);
         if (USER_INPUT_CODES.includes(key)) {
             this.processUserInput();
         }
@@ -104,7 +105,12 @@ export default class Game extends Component {
         return (
             <main>
                 <GlobalKeyDownHandler onKeyDown={this.handlerKeyDown} />
-                <PlayGrid activeCellIndex={this.state.currentActiveCell} />
+                <PlayGrid
+                    activeCellIndex={this.state.currentActiveCell}
+                    isCurrentCellGuessedCorrectly={this.state.isCurrentCellGuessedCorrectly}
+                    onClick={this.processUserInput}
+                    dimensionSize={DIMENSION_SIZE}
+                />
             </main>
         );
     }
