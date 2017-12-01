@@ -1,5 +1,8 @@
+:root {
+    --background-color: #293742;
+}
 body {
     margin: 0;
     padding: 0;
-    background-color: #293742;
+    background-color: var(--background-color);
 }

@@ -9,7 +9,8 @@ export default class PlayGrid extends Component {
             activeCellIndex,
             isCurrentCellGuessedCorrectly,
             numberOfDimensions,
-            dimensionSize,
+            numberOfCells,
+            tickTime,
             onClick,
         } = this.props;
         return (
@@ -17,16 +18,24 @@ export default class PlayGrid extends Component {
                 onClick={onClick}
                 className="play-grid"
                 style={{
-                    '--dimension-size': dimensionSize,
+                    '--tick-time': `${tickTime}ms`,
+                    '--dimension-size': Math.sqrt(numberOfCells),
                 }}
             >
-                {Array(dimensionSize)
+                {Array(numberOfCells)
                     .fill()
                     .map((value, index) => index)
                     .map(cellIndex => {
                         const isActive = activeCellIndex === cellIndex;
                         const isCorrect = isActive && isCurrentCellGuessedCorrectly;
-                        return <Cell key={cellIndex} isActive={isActive} isCorrect={isCorrect} />;
+                        return (
+                            <Cell
+                                key={cellIndex}
+                                isActive={isActive}
+                                isCorrect={isCorrect}
+                                tickTime={tickTime}
+                            />
+                        );
                     })}
             </div>
         );

@@ -1,7 +1,9 @@
 .play-grid {
+    max-width: 940px;
+    height: 80vmin;
+    width: 80vmin;
     display: grid;
-    width: 100vw;
-    height: 100vh;
+    margin: auto;
     grid-template-columns: repeat(var(--dimension-size), 1fr);
     grid-template-rows: repeat(var(--dimension-size), 1fr);
 }

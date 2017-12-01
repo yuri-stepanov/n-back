@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import GlobalKeyDownHandler from 'components/common/GlobalKeyDownHandler';
+import { getNextItemIndex } from './gameLogic';
 import PlayGrid from './playGrid';
 import {
-    DEFAULT_ROUND_TIME,
+    DEFAULT_GAME_TICK_TIME,
     DEFAULT_NUMBER_OF_ROUNDS,
-    DIMENSION_SIZE,
+    DEFAULT_NUMBER_OF_CELLS,
     DEFAULT_DIFFICULTY,
 } from './gameConstants';
+import './game.css';
 // TODO: Use swipe to present user with UI controls
 
 const ENTER_CODE = 'Enter';
@@ -42,7 +44,7 @@ export default class Game extends Component {
 
     startGameTimer() {
         this.updateGameState();
-        this.timer = setInterval(this.updateGameState, DEFAULT_ROUND_TIME);
+        this.timer = setInterval(this.updateGameState, DEFAULT_GAME_TICK_TIME);
     }
 
     clearTimer() {
@@ -51,21 +53,9 @@ export default class Game extends Component {
 
     clearState() {}
 
-    getNextRandomCell() {
-        const { currentActiveCell } = this.state;
-        let nextActiveCell = -1;
-        do {
-            nextActiveCell = Math.floor(Math.random() * DIMENSION_SIZE);
-        } while (currentActiveCell === nextActiveCell);
-        return nextActiveCell;
-    }
-
     updateGameState() {
         const { currentRound, previousActiveCells, currentActiveCell } = this.state;
-        const nextActiveCell = this.getNextRandomCell();
-
-        console.log('current round: ' + (currentRound + 1));
-        console.log('current index: ' + nextActiveCell);
+        const nextActiveCell = getNextItemIndex(currentActiveCell, DEFAULT_NUMBER_OF_CELLS);
 
         this.setState({
             isCurrentCellGuessedCorrectly: false,
@@ -103,13 +93,14 @@ export default class Game extends Component {
 
     render() {
         return (
-            <main>
+            <main className="play-grid-container">
                 <GlobalKeyDownHandler onKeyDown={this.handlerKeyDown} />
                 <PlayGrid
                     activeCellIndex={this.state.currentActiveCell}
                     isCurrentCellGuessedCorrectly={this.state.isCurrentCellGuessedCorrectly}
                     onClick={this.processUserInput}
-                    dimensionSize={DIMENSION_SIZE}
+                    numberOfCells={DEFAULT_NUMBER_OF_CELLS}
+                    tickTime={DEFAULT_GAME_TICK_TIME}
                 />
             </main>
         );

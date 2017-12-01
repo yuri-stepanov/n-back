@@ -1,32 +1,30 @@
 .cell {
-    margin: 25%;
-    border-radius: 10%;
+    border: 1px solid #7c84ae;
+    background-color: var(--background-color);
 }
 
 .cell--active {
+    background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
+    opacity: 0;
     animation-name: pulse;
-    animation-duration: 2.5s;
+    animation-duration: var(--tick-time);
     animation-iteration-count: 1;
 }
 
 .cell--active.cell--correct {
-    animation-name: none;
     background: linear-gradient(45deg, #1d976c 30%, #93f9b9 90%);
 }
 
 @keyframes pulse {
     0% {
-        background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
         opacity: 0;
     }
 
     75% {
-        background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
         opacity: 1;
     }
 
     100% {
-        background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
         opacity: 0;
     }
 }
