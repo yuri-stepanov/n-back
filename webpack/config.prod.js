@@ -3,6 +3,7 @@ const webpackMerge = require('webpack-merge');
 const { resolve } = require('path');
 const createBaseConfig = require('./config');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = function createConfig({ rootFolder, srcFolder }) {
     return webpackMerge(createBaseConfig.apply(null, arguments), {
@@ -32,7 +33,18 @@ module.exports = function createConfig({ rootFolder, srcFolder }) {
                 },
             }),
             // minimize our code
-            new webpack.optimize.UglifyJsPlugin({ sourceMap: true }),
+            new UglifyJsPlugin({
+                sourceMap: true,
+                uglifyOptions: {
+                    ie8: false,
+                    ecma: 8,
+                    output: {
+                        comments: false,
+                        beautify: false,
+                    },
+                    compress: true,
+                },
+            }),
         ],
     });
 };
