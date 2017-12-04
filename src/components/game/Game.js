@@ -7,16 +7,10 @@ import {
     DEFAULT_NUMBER_OF_ROUNDS,
     DEFAULT_NUMBER_OF_CELLS,
     DEFAULT_DIFFICULTY,
-} from './gameConstants';
+} from './gameDefaults';
+import { USER_INPUT_CODES, STOP_CODES, USER_ANSWER_RESULT } from './gameConstants';
 import './game.css';
 // TODO: Use swipe to present user with UI controls
-
-const ENTER_CODE = 'Enter';
-const SPACE_CODE = 'Space';
-const ESCAPE_CODE = 'Escape';
-
-const USER_INPUT_CODES = [ENTER_CODE, SPACE_CODE];
-const STOP_CODES = [ESCAPE_CODE];
 
 export default class Game extends Component {
     constructor(props) {
@@ -26,6 +20,7 @@ export default class Game extends Component {
             currentActiveCell: 0,
             numberOfCorrectAnswers: 0,
             previousActiveCells: [],
+            userAnswer: USER_ANSWER_RESULT.NOT_ANSWERED,
         };
 
         this.updateGameState = this.updateGameState.bind(this);
@@ -58,7 +53,7 @@ export default class Game extends Component {
         const nextActiveCell = getNextItemIndex(currentActiveCell, DEFAULT_NUMBER_OF_CELLS);
 
         this.setState({
-            isCurrentCellGuessedCorrectly: false,
+            userAnswer: false,
             currentRound: currentRound + 1,
             currentActiveCell: nextActiveCell,
             previousActiveCells: [...previousActiveCells, ...[currentActiveCell]],
@@ -71,8 +66,12 @@ export default class Game extends Component {
             previousActiveCells[previousActiveCells.length - DEFAULT_DIFFICULTY];
         if (previousNAnswer === currentActiveCell) {
             this.setState({
-                isCurrentCellGuessedCorrectly: true,
+                userAnswer: USER_ANSWER_RESULT.CORRECT,
                 numberOfCorrectAnswers: this.state.numberOfCorrectAnswers + 1,
+            });
+        } else {
+            this.setState({
+                userAnswer: USER_ANSWER_RESULT.INCORRECT,
             });
         }
     }
@@ -97,7 +96,7 @@ export default class Game extends Component {
                 <GlobalKeyDownHandler onKeyDown={this.handlerKeyDown} />
                 <PlayGrid
                     activeCellIndex={this.state.currentActiveCell}
-                    isCurrentCellGuessedCorrectly={this.state.isCurrentCellGuessedCorrectly}
+                    userAnswer={this.state.userAnswer}
                     onClick={this.processUserInput}
                     numberOfCells={DEFAULT_NUMBER_OF_CELLS}
                     tickTime={DEFAULT_GAME_TICK_TIME}

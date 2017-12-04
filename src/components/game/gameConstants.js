@@ -1,4 +1,11 @@
-export const DEFAULT_NUMBER_OF_CELLS = 9;
-export const DEFAULT_DIFFICULTY = 2;
-export const DEFAULT_GAME_TICK_TIME = 1500;
-export const DEFAULT_NUMBER_OF_ROUNDS = 10;
+const ENTER_CODE = 'Enter';
+const SPACE_CODE = 'Space';
+const ESCAPE_CODE = 'Escape';
+
+export const USER_INPUT_CODES = [ENTER_CODE, SPACE_CODE];
+export const STOP_CODES = [ESCAPE_CODE];
+export const USER_ANSWER_RESULT = {
+    CORRECT: 'CORRECT',
+    INCORRECT: 'INCORRECT',
+    NOT_ANSWERED: 'NOT_ANSWERED',
+};

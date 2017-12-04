@@ -1,6 +1,12 @@
-.cell {
+.cell-wrapper {
     border: 1px solid #7c84ae;
     background-color: var(--background-color);
+    padding: 1px;
+}
+
+.cell {
+    width: 100%;
+    height: 100%;
 }
 
 .cell--active {

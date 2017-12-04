@@ -1,22 +1,27 @@
 import React, { Component } from 'react';
-
-import Cell from '../cell';
+import classNames from 'classnames';
+import Cell from './cell';
+import { USER_ANSWER_RESULT } from '../gameConstants';
 import './playGrid.css';
 
 export default class PlayGrid extends Component {
     render() {
         const {
             activeCellIndex,
-            isCurrentCellGuessedCorrectly,
+            userAnswer,
             numberOfDimensions,
             numberOfCells,
             tickTime,
             onClick,
         } = this.props;
+        const answeredCorrectly = userAnswer === USER_ANSWER_RESULT.CORRECT;
         return (
             <div
                 onClick={onClick}
-                className="play-grid"
+                className={classNames('play-grid', {
+                    'play-grid--answered-wrong': userAnswer === USER_ANSWER_RESULT.INCORRECT,
+                    'play-grid--answered-correctly': answeredCorrectly,
+                })}
                 style={{
                     '--tick-time': `${tickTime}ms`,
                     '--dimension-size': Math.sqrt(numberOfCells),
@@ -27,7 +32,7 @@ export default class PlayGrid extends Component {
                     .map((value, index) => index)
                     .map(cellIndex => {
                         const isActive = activeCellIndex === cellIndex;
-                        const isCorrect = isActive && isCurrentCellGuessedCorrectly;
+                        const isCorrect = isActive && answeredCorrectly;
                         return (
                             <Cell
                                 key={cellIndex}

@@ -6,4 +6,13 @@
     margin: auto;
     grid-template-columns: repeat(var(--dimension-size), 1fr);
     grid-template-rows: repeat(var(--dimension-size), 1fr);
+    transition: box-shadow 300ms ease-in-out;
+}
+
+.play-grid--answered-wrong {
+    box-shadow: 0 0 5px 5px #e02c2c;
+}
+
+.play-grid--answered-correctly {
+    box-shadow: 0 0 5px 5px #20f998;
 }
