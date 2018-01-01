@@ -12,6 +12,8 @@
     "devDependencies": {
         "babel-core": "^6.25.0",
         "babel-loader": "^7.1.1",
+        "babel-plugin-transform-class-properties": "^6.24.1",
+        "babel-plugin-transform-object-rest-spread": "^6.26.0",
         "babel-polyfill": "^6.23.0",
         "babel-preset-env": "^1.6.0",
         "babel-preset-react": "^6.24.1",
@@ -30,10 +32,10 @@
     },
     "dependencies": {
         "classnames": "^2.2.5",
-        "material-ui": "^1.0.0-beta.21",
+        "material-ui": "^1.0.0-beta.26",
         "material-ui-icons": "^1.0.0-beta.17",
-        "react": "^16.1.1",
-        "react-dom": "^16.1.1",
+        "react": "^16.2.0",
+        "react-dom": "^16.2.0",
         "typeface-roboto": "0.0.45"
     }
 }
