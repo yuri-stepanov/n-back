@@ -100,6 +100,7 @@ export default class Game extends Component {
   render() {
     return (
       <main className="play-grid-container">
+        <Settings settings={this.state.settings} onChange={this.updateSettings} />
         <GlobalKeyDownHandler onKeyDown={this.handlerKeyDown} />
         <PlayGrid
           activeCellIndex={this.state.currentActiveCell}
