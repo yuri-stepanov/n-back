@@ -11,7 +11,6 @@ module.exports = function createConfig({ distFolder, srcFolder, rootFolder }) {
     output: {
       filename: 'bundle.js',
       path: resolve(rootFolder, distFolder),
-      publicPath: '/',
     },
     module: {
       rules: [
@@ -25,9 +24,10 @@ module.exports = function createConfig({ distFolder, srcFolder, rootFolder }) {
         // loading fonts
         {
           test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-          loader: 'file-loader',
+          loader: 'url-loader',
           options: {
-            name: '[path][name].[ext]',
+            limit: 50000,
+            name: `[name].[ext]`,
           },
         },
       ],
@@ -46,7 +46,9 @@ module.exports = function createConfig({ distFolder, srcFolder, rootFolder }) {
         template: resolve(rootFolder, 'template/index.html'),
       }),
       // clean build folder before each build
-      new CleanWebpackPlugin(distFolder),
+      new CleanWebpackPlugin(distFolder, {
+        root: resolve(rootFolder),
+      }),
     ],
   };
 };
