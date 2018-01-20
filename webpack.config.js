@@ -1,17 +1,17 @@
 // prod webpack config
-const prod = require('./webpack/config.prod')
+const prod = require('./webpack/config.prod');
 // dev webpack config
-const dev = require('./webpack/config.dev')
-const { distFolder, srcFolder } = require('./webpack/paths.js')
+const dev = require('./webpack/config.dev');
+const { distFolder, srcFolder } = require('./webpack/paths.js');
 
 // variable that hold value of the environment we are building
 // 'prod' or 'dev'
-const env = process.env.NODE_ENV
+const env = process.env.NODE_ENV;
 
 const configFactories = {
   prod,
-  dev
-}
+  dev,
+};
 
 const configOptions = {
   // folder in which put builded files
@@ -19,9 +19,9 @@ const configOptions = {
   // main source files folder
   srcFolder,
   // root folder in which build command was called
-  rootFolder: __dirname
-}
+  rootFolder: __dirname,
+};
 
-const configFactory = configFactories[env] || prod
+const configFactory = configFactories[env] || prod;
 
-module.exports = configFactory(configOptions)
+module.exports = configFactory(configOptions);

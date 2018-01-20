@@ -1,0 +1,229 @@
+/* roboto-100normal - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100;
+  src:
+    local('Roboto Thin '),
+    local('Roboto-Thin'),
+    url(/_/node_modules/typeface-roboto/files/roboto-latin-100.woff2) format('woff2'), 
+    url(/_/node_modules/typeface-roboto/files/roboto-latin-100.woff) format('woff'); /* Modern Browsers */
+}
+
+/* roboto-100italic - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 100;
+  src:
+    local('Roboto Thin italic'),
+    local('Roboto-Thinitalic'),
+    url(/_/node_modules/typeface-roboto/files/roboto-latin-100italic.woff2) format('woff2'), 
+    url(/_/node_modules/typeface-roboto/files/roboto-latin-100italic.woff) format('woff'); /* Modern Browsers */
+}
+
+/* roboto-300normal - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Roboto Light '),
+    local('Roboto-Light'),
+    url(/_/node_modules/typeface-roboto/files/roboto-latin-300.woff2) format('woff2'), 
+    url(/_/node_modules/typeface-roboto/files/roboto-latin-300.woff) format('woff'); /* Modern Browsers */
+}
+
+/* roboto-300italic - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Roboto Light italic'),
+    local('Roboto-Lightitalic'),
+    url(/_/node_modules/typeface-roboto/files/roboto-latin-300italic.woff2) format('woff2'), 
+    url(/_/node_modules/typeface-roboto/files/roboto-latin-300italic.woff) format('woff'); /* Modern Browsers */
+}
+
+/* roboto-400normal - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Roboto Regular '),
+    local('Roboto-Regular'),
+    url(/_/node_modules/typeface-roboto/files/roboto-latin-400.woff2) format('woff2'), 
+    url(/_/node_modules/typeface-roboto/files/roboto-latin-400.woff) format('woff'); /* Modern Browsers */
+}
+
+/* roboto-400italic - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Roboto Regular italic'),
+    local('Roboto-Regularitalic'),
+    url(/_/node_modules/typeface-roboto/files/roboto-latin-400italic.woff2) format('woff2'), 
+    url(/_/node_modules/typeface-roboto/files/roboto-latin-400italic.woff) format('woff'); /* Modern Browsers */
+}
+
+/* roboto-500normal - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    local('Roboto Medium '),
+    local('Roboto-Medium'),
+    url(/_/node_modules/typeface-roboto/files/roboto-latin-500.woff2) format('woff2'), 
+    url(/_/node_modules/typeface-roboto/files/roboto-latin-500.woff) format('woff'); /* Modern Browsers */
+}
+
+/* roboto-500italic - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    local('Roboto Medium italic'),
+    local('Roboto-Mediumitalic'),
+    url(/_/node_modules/typeface-roboto/files/roboto-latin-500italic.woff2) format('woff2'), 
+    url(/_/node_modules/typeface-roboto/files/roboto-latin-500italic.woff) format('woff'); /* Modern Browsers */
+}
+
+/* roboto-700normal - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Roboto Bold '),
+    local('Roboto-Bold'),
+    url(/_/node_modules/typeface-roboto/files/roboto-latin-700.woff2) format('woff2'), 
+    url(/_/node_modules/typeface-roboto/files/roboto-latin-700.woff) format('woff'); /* Modern Browsers */
+}
+
+/* roboto-700italic - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Roboto Bold italic'),
+    local('Roboto-Bolditalic'),
+    url(/_/node_modules/typeface-roboto/files/roboto-latin-700italic.woff2) format('woff2'), 
+    url(/_/node_modules/typeface-roboto/files/roboto-latin-700italic.woff) format('woff'); /* Modern Browsers */
+}
+
+/* roboto-900normal - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src:
+    local('Roboto Black '),
+    local('Roboto-Black'),
+    url(/_/node_modules/typeface-roboto/files/roboto-latin-900.woff2) format('woff2'), 
+    url(/_/node_modules/typeface-roboto/files/roboto-latin-900.woff) format('woff'); /* Modern Browsers */
+}
+
+/* roboto-900italic - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 900;
+  src:
+    local('Roboto Black italic'),
+    local('Roboto-Blackitalic'),
+    url(/_/node_modules/typeface-roboto/files/roboto-latin-900italic.woff2) format('woff2'), 
+    url(/_/node_modules/typeface-roboto/files/roboto-latin-900italic.woff) format('woff'); /* Modern Browsers */
+}
+
+.settings {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.cell-wrapper {
+    border: 1px solid #7c84ae;
+    background-color: var(--background-color);
+    padding: 1px;
+}
+
+.cell {
+    width: 100%;
+    height: 100%;
+}
+
+.cell--active {
+    background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
+    opacity: 0;
+    animation-name: pulse;
+    animation-duration: var(--tick-time);
+    animation-iteration-count: 1;
+}
+
+.cell--active.cell--correct {
+    background: linear-gradient(45deg, #1d976c 30%, #93f9b9 90%);
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+.play-grid {
+    max-width: 940px;
+    height: 80vmin;
+    width: 80vmin;
+    display: grid;
+    margin: auto;
+    grid-template-columns: repeat(var(--dimension-size), 1fr);
+    grid-template-rows: repeat(var(--dimension-size), 1fr);
+    transition: box-shadow 300ms ease-in-out;
+}
+
+.play-grid--answered-wrong {
+    box-shadow: 0 0 5px 5px #e02c2c;
+}
+
+.play-grid--answered-correctly {
+    box-shadow: 0 0 5px 5px #20f998;
+}
+.play-grid-container {
+    height: 100vh;
+    display: flex;
+    margin: auto;
+}
+:root {
+    --background-color: #293742;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+}

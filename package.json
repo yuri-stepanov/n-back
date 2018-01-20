@@ -1,5 +1,5 @@
 {
-  "name": "n-back game",
+  "name": "n-back-game",
   "version": "1.0.0",
   "description": "A sensible minimum to write react",
   "main": "index.js",
@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "material-ui": "^1.0.0-beta.26",
+    "material-ui": "^1.0.0-beta.29",
     "material-ui-icons": "^1.0.0-beta.17",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

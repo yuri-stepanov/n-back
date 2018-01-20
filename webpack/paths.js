@@ -1,4 +1,4 @@
 module.exports = {
-    distFolder: 'dist',
-    srcFolder: 'src',
+  distFolder: 'docs',
+  srcFolder: 'src',
 };
