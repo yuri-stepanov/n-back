@@ -52,8 +52,8 @@ class Settings extends Component {
       <div className="settings">
         <Button
           onClick={this.openDialog}
-          fab
-          color="accent"
+          variant="fab"
+          color="secondary"
           aria-label="edit"
           className={classes.button}
         >

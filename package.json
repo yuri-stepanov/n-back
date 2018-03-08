@@ -1,42 +1,37 @@
 {
-  "name": "n-back-game",
+  "name": "minimalistic-react-boilerplate",
   "version": "1.0.0",
   "description": "A sensible minimum to write react",
   "main": "index.js",
-  "scripts": {
-    "build": "cross-env NODE_ENV=prod webpack",
-    "start": "cross-env NODE_ENV=dev webpack-dev-server"
-  },
   "author": "Yury Stsiapanau",
-  "license": "ISC",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack --mode production"
+  },
   "devDependencies": {
-    "babel-core": "^6.25.0",
-    "babel-loader": "^7.1.1",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-polyfill": "^6.23.0",
-    "babel-preset-env": "^1.6.0",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
-    "clean-webpack-plugin": "^0.1.16",
-    "cross-env": "^5.0.5",
-    "css-loader": "^0.28.4",
-    "extract-text-webpack-plugin": "^3.0.0",
-    "file-loader": "^1.1.5",
-    "html-webpack-plugin": "^2.30.1",
-    "react-hot-loader": "^3.0.0-beta.7",
-    "style-loader": "^0.18.2",
-    "uglifyjs-webpack-plugin": "^1.1.2",
-    "url-loader": "^0.6.2",
-    "webpack": "^3.9.1",
-    "webpack-dev-server": "^2.9.5",
-    "webpack-merge": "^4.1.0"
+    "css-loader": "^0.28.10",
+    "file-loader": "^1.1.11",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.0.6",
+    "mini-css-extract-plugin": "^0.2.0",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.10",
+    "webpack-dev-server": "^3.1.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "material-ui": "^1.0.0-beta.29",
-    "material-ui-icons": "^1.0.0-beta.17",
+    "material-ui": "^1.0.0-beta.36",
+    "material-ui-icons": "^1.0.0-beta.36",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "typeface-roboto": "0.0.45"
+    "typeface-roboto": "0.0.54"
   }
 }

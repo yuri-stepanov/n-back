@@ -1,27 +1,58 @@
-// prod webpack config
-const prod = require('./webpack/config.prod');
-// dev webpack config
-const dev = require('./webpack/config.dev');
-const { distFolder, srcFolder } = require('./webpack/paths.js');
+const { resolve } = require('path');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-// variable that hold value of the environment we are building
-// 'prod' or 'dev'
-const env = process.env.NODE_ENV;
-
-const configFactories = {
-  prod,
-  dev,
+module.exports = {
+  output: {
+    filename: 'bundle.js',
+    path: resolve(__dirname, 'docs'),
+  },
+  devtool: 'inline-source-map',
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        },
+      },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: 'html-loader',
+            options: { minimize: true },
+          },
+        ],
+      },
+      {
+        test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 50000,
+          name: '[name].[ext]',
+        },
+      },
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
+    ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+    modules: [resolve('./src'), resolve('./node_modules')],
+  },
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: './static/index.html',
+      filename: './index.html',
+    }),
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: '[name].css',
+    }),
+  ],
 };
-
-const configOptions = {
-  // folder in which put builded files
-  distFolder,
-  // main source files folder
-  srcFolder,
-  // root folder in which build command was called
-  rootFolder: __dirname,
-};
-
-const configFactory = configFactories[env] || prod;
-
-module.exports = configFactory(configOptions);
