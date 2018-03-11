@@ -11,4 +11,16 @@
   <div id="app"></div>
 </body>
 
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('serviceWorker.js').then(function (registration) {
+        console.log('Service worker registered successfully within a scope: ', registration.scope)
+      }, function (err) {
+        console.log('Service worker registration failed: ', err)
+      })
+    })
+  }
+</script>
+
 </html>

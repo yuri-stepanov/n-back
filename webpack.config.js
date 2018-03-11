@@ -1,11 +1,19 @@
 const { resolve } = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const resolvePath = path => resolve(__dirname, path);
+const buildPath = resolvePath('docs');
+
 module.exports = {
+  entry: {
+    app: resolvePath('src/index.js'),
+    serviceWorker: resolvePath('src/serviceWorker.js'),
+  },
   output: {
-    filename: 'bundle.js',
-    path: resolve(__dirname, 'docs'),
+    filename: '[name].js',
+    path: buildPath,
   },
   devtool: 'inline-source-map',
   module: {
@@ -45,6 +53,7 @@ module.exports = {
     modules: [resolve('./src'), resolve('./node_modules')],
   },
   plugins: [
+    new CleanWebpackPlugin([buildPath]),
     new HtmlWebPackPlugin({
       template: './static/index.html',
       filename: './index.html',
