@@ -9,7 +9,11 @@ import {
   DEFAULT_NUMBER_OF_CELLS,
   DEFAULT_DIFFICULTY,
 } from './gameDefaults';
-import { USER_INPUT_CODES, STOP_CODES, USER_ANSWER_RESULT } from './gameConstants';
+import {
+  USER_INPUT_CODES,
+  STOP_CODES,
+  USER_ANSWER_RESULT,
+} from './gameConstants';
 import './game.css';
 // TODO: Use swipe to present user with UI controls
 
@@ -55,7 +59,10 @@ export default class Game extends Component {
 
   updateGameState() {
     const { currentRound, previousActiveCells, currentActiveCell } = this.state;
-    const nextActiveCell = getNextItemIndex(currentActiveCell, DEFAULT_NUMBER_OF_CELLS);
+    const nextActiveCell = getNextItemIndex(
+      currentActiveCell,
+      DEFAULT_NUMBER_OF_CELLS,
+    );
 
     this.setState({
       userAnswer: false,
@@ -66,8 +73,13 @@ export default class Game extends Component {
   }
 
   processUserInput() {
-    const { previousActiveCells, currentActiveCell, settings: { difficulty } } = this.state;
-    const previousNAnswer = previousActiveCells[previousActiveCells.length - difficulty];
+    const {
+      previousActiveCells,
+      currentActiveCell,
+      settings: { difficulty },
+    } = this.state;
+    const previousNAnswer =
+      previousActiveCells[previousActiveCells.length - difficulty];
     if (previousNAnswer === currentActiveCell) {
       this.setState({
         userAnswer: USER_ANSWER_RESULT.CORRECT,
@@ -100,7 +112,6 @@ export default class Game extends Component {
   render() {
     return (
       <main className="play-grid-container">
-        <Settings settings={this.state.settings} onChange={this.updateSettings} />
         <GlobalKeyDownHandler onKeyDown={this.handlerKeyDown} />
         <PlayGrid
           activeCellIndex={this.state.currentActiveCell}
@@ -108,6 +119,10 @@ export default class Game extends Component {
           onClick={this.processUserInput}
           numberOfCells={DEFAULT_NUMBER_OF_CELLS}
           tickTime={DEFAULT_GAME_TICK_TIME}
+        />
+        <Settings
+          settings={this.state.settings}
+          onChange={this.updateSettings}
         />
       </main>
     );

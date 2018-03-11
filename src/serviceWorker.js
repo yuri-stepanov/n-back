@@ -32,7 +32,12 @@ self.addEventListener('fetch', event => {
             console.log('requestSuccessful');
             const responseToCache = actualResponse.clone();
             caches.open(CACHE_NAME).then(cache => {
-              console.log('Putting into cache');
+              console.log('Refreshing cache');
+              cache
+                .delete(event.request)
+                .then(cacheRemoveResult =>
+                  console.log('Cache remove result: ', cacheRemoveResult),
+                );
               cache.put(event.request, responseToCache);
             });
 

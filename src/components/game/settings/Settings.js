@@ -65,15 +65,21 @@ class Settings extends Component {
           onClose={this.closeDialog}
           aria-labelledby="responsive-dialog-title"
         >
-          <DialogTitle id="responsive-dialog-title">{'N-back settings'}</DialogTitle>
+          <DialogTitle id="responsive-dialog-title">
+            {'N-back settings'}
+          </DialogTitle>
           <DialogContent>
             <form className={classes.container}>
               <FormControl className={classes.formControl}>
-                <InputLabel htmlFor="difficulty-native-simple">Difficulty</InputLabel>
+                <InputLabel htmlFor="difficulty-native-simple">
+                  Difficulty
+                </InputLabel>
                 <Select
                   native
                   value={settings.difficulty}
-                  onChange={event => onChange({ ...settings, difficulty: event.target.value })}
+                  onChange={event =>
+                    onChange({ ...settings, difficulty: event.target.value })
+                  }
                   input={<Input id="difficulty-native-simple" />}
                 >
                   <option value={2}>1 back</option>
