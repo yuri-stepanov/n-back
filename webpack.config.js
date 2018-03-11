@@ -2,6 +2,7 @@ const { resolve } = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const resolvePath = path => resolve(__dirname, path);
 const buildPath = resolvePath('docs');
@@ -9,7 +10,6 @@ const buildPath = resolvePath('docs');
 module.exports = {
   entry: {
     app: resolvePath('src/index.js'),
-    serviceWorker: resolvePath('src/serviceWorker.js'),
   },
   output: {
     filename: '[name].js',
@@ -63,5 +63,6 @@ module.exports = {
       // both options are optional
       filename: '[name].css',
     }),
+    new CopyWebpackPlugin([{ from: './src/serviceWorker.js', to: buildPath }]),
   ],
 };
