@@ -63,6 +63,10 @@ module.exports = {
       // both options are optional
       filename: '[name].css',
     }),
-    new CopyWebpackPlugin([{ from: './src/serviceWorker.js', to: buildPath }]),
+    new CopyWebpackPlugin([
+      { from: './static/icons/', to: buildPath + '/icons' },
+      { from: './static/manifest.json', to: buildPath },
+      { from: './src/serviceWorker.js', to: buildPath },
+    ]),
   ],
 };
