@@ -33,7 +33,6 @@
     "material-ui": "^1.0.0-beta.36",
     "material-ui-icons": "^1.0.0-beta.36",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "typeface-roboto": "0.0.54"
+    "react-dom": "^16.2.0"
   }
 }
