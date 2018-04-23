@@ -3,6 +3,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ClosureCompilerPlugin = require('webpack-closure-compiler');
 
 const resolvePath = path => resolve(__dirname, path);
 const buildPath = resolvePath('docs');
@@ -68,5 +69,6 @@ module.exports = {
       { from: './static/manifest.json', to: buildPath },
       { from: './src/serviceWorker.js', to: buildPath },
     ]),
+    new ClosureCompilerPlugin({ jsCompiler: true }),
   ],
 };
