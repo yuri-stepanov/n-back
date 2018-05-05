@@ -3,10 +3,10 @@
 
 <head>
   <title>N Back</title>
-  <link rel="icon" type="image/png" href="icons/icon48.png">
+  <link rel="shortcut icon" type="image/png" href="icons/icon48.png">
   <meta charset="UTF-8">
   <meta name="theme-color" content="#293742">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
   <link rel="manifest" href="manifest.json">
 </head>
 
@@ -20,11 +20,7 @@
 <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
-      navigator.serviceWorker.register('serviceWorker.js').then(function (registration) {
-        console.log('Service worker registered successfully within a scope: ', registration.scope)
-      }, function (err) {
-        console.log('Service worker registration failed: ', err)
-      })
+      navigator.serviceWorker.register('serviceWorker.js')
     })
   }
 </script>

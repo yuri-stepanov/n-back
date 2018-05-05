@@ -3,27 +3,27 @@
   "name": "NBack Attention Trainer",
   "icons": [
     {
-      "src": "n-back/icons/icon48.png",
+      "src": "/n-back/icons/icon48.png",
       "type": "image/png",
       "sizes": "48x48"
     },
     {
-      "src": "n-back/icons/icon96.png",
+      "src": "/n-back/icons/icon96.png",
       "type": "image/png",
       "sizes": "96x96"
     },
     {
-      "src": "n-back/icons/icon192.png",
+      "src": "/n-back/icons/icon192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "n-back/icons/icon256.png",
+      "src": "/n-back/icons/icon256.png",
       "type": "image/png",
       "sizes": "256x256"
     },
     {
-      "src": "n-back/icons/icon512.png",
+      "src": "/n-back/icons/icon512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
